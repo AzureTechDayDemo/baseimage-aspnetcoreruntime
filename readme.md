@@ -24,22 +24,6 @@ az acr build -t ${REGISTRY_NAME}/baseimages/microsoft/aspnetcore/runtime:linux-2
 ```
 
 ### Maintained as a Task
-** preview syntax **
-```sh
-az acr build-task create \
-  -n demo42aspnetcoreruntime \
-  --context https://github.com/demo42/baseimage-aspnetcoreruntime \
-  -t baseimages/microsoft/aspnetcore/runtime:linux-2.1 \
-  --build-arg REGISTRY_NAME=$REGISTRY_NAME \
-  --git-access-token $(az keyvault secret show \
-                         --vault-name $AKV_NAME \
-                         --name $GIT_TOKEN_NAME \
-                         --query value -o tsv) \
-  --commit-trigger-enabled false \
-  --base-image-trigger none \
-  --registry $ACR_NAME 
-```
-** GA syntax **
 ```sh
 az acr task create \
   -n demo42-aspnetcore-runtime \
