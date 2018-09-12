@@ -44,21 +44,15 @@ az acr build-task create \
 az acr task create \
   -n demo42-aspnetcore-runtime \
   --context https://github.com/demo42/baseimage-aspnetcoreruntime \
-  --file Dockerfile \
-  -t baseimages/microsoft/aspnetcore/runtime:linux-2.1 \
+  --file acr-task.yaml \
   --git-access-token $GIT_TOKEN \
   --commit-trigger-enabled true \
   --base-image-trigger-enabled false \
-  --registry $ACR_NAME 
+  --registry $ACR_NAME
 ```
 
 ### Manually trigger the task, as triggers are intentionally disabled
-** Preview Syntax **
-```sh
-az acr build-task run -n demo42aspnetcoreruntime
-```
 
-** GA Syntax **
 ```sh
 az acr task run -n demo42-aspnetcore-runtime
 ```

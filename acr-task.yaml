@@ -1,0 +1,9 @@
+version: 1.0-preview-1
+steps:
+  - build: >
+      -t {{.Run.Registry}}/baseimages/microsoft/aspnetcore/runtime:linux-2.1 
+      --file ./Dockerfile 
+      --build-arg REGISTRY_NAME={{.Run.Registry}}/ 
+      .
+  - push: 
+    - {{.Run.Registry}}/baseimages/microsoft/aspnetcore/runtime:linux-2.1
