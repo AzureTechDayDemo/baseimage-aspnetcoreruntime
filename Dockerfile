@@ -3,4 +3,4 @@ FROM microsoft/dotnet:2.1-aspnetcore-runtime
 
 # Change to simulate an obvious change in the base image
 # View on the about page
-ENV BACKGROUND_COLOR=Yellow
+ENV BACKGROUND_COLOR=Green
