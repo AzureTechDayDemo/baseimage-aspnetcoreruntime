@@ -43,7 +43,7 @@ az acr build-task create \
 ```sh
 az acr task create \
   -n demo42-aspnetcore-runtime \
-  -f acr-task.yaml \
+  -f ./acr-task.yaml \
   --context https://github.com/demo42/baseimage-aspnetcoreruntime.git \
   --git-access-token $GIT_TOKEN \
   --commit-trigger-enabled true \

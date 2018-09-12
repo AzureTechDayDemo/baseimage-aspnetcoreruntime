@@ -1,5 +1,6 @@
 version: 1.0-preview-1
 steps:
+  - cmd: bash ls
   - build: >
       -t {{.Run.Registry}}/baseimages/microsoft/aspnetcore/runtime:linux-2.1 
       -f ./Dockerfile 
